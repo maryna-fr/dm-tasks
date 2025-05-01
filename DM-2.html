@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Бінарні відношення</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+       <!-- Кнопка "Назад" -->
+ <button class="circle-button nav-btn" title="Попереднє завдання" id="prevBtn">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+<img src="condition-2.png" width="700" alt="Умова для завдання №2">
+
+    <form>
+        <div class="form-group select-group">
+            <select id="presetOptions">
+                <option value="">Виберіть варіант...</option>
+                <option value="1,2,3,4,5||4,5,6,7||y - x >= 3">Варіант 1</option>
+                <option value="5,2,1||7,8,9||x * 2 == y">Варіант 2</option>
+                <option value="6,7,8,9||1,2,9,10||x + y = 12">Варіант 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            A = { <input type="text" id="setA" value="2,3,4,5" size="15"> }
+        </div>
+        <div class="form-group">
+            B = { <input type="text" id="setB" value="4,5,6,7" size="15"> }
+        </div>
+        <div class="form-group" id="forR">
+            R = { (x,y): x ∈ A, y ∈ B, 
+            <input type="text" id="R"  class="r-size-1" value="y - x >= 3" size="25"> 
+            <span id="relationEnd" > }</span>
+        </div>
+        <div class="form-group">
+            <input type="button" value="Обчислити" id="calcBtn" class="calculate-button">
+        </div>
+    </form>
+     <!-- Кнопка "На головну" -->
+  <button class="circle-button nav-btn" title="Головна сторінка" id="homeBtn">
+    <i class="fas fa-house"></i>
+</button>
+
+<!-- Кнопка "Вперед" -->
+<button class="circle-button nav-btn" title="Наступне завдання" id="nextBtn">
+    <i class="fas fa-arrow-right"></i>
+</button>
+
+    <p id="Res"></p>
+    <div id="HasseTitle">
+        <canvas id="HasseCanvas" width="400" height="300"></canvas>
+    </div>
+    <script src="script-dm-2.js"></script>
+</body>
+</html>

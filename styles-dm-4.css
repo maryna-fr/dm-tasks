@@ -1,0 +1,136 @@
+#formula, #result {
+  width: 90%;
+  display: block;
+  font: 1.5em Arial;
+  border: 2px solid black;
+  border-radius: 3px;
+  text-align: center;
+  padding: 6px;
+  margin: 10px auto;
+}
+
+#formula:focus {
+  outline: none;
+  border: 2px solid  #2981df;
+}
+
+#buttons {
+  margin: auto;
+  width: 585px;
+}
+
+.btn {
+  display: inline-block;
+  width: 80px;
+  height: 50px;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background-color:#456fa0; 
+  ;
+  padding: 10px;
+  line-height: 1.33;
+  border-radius: 6px;
+  border: 0;
+  font: bold 1.2em Arial;
+  margin-bottom: 10px;
+}
+
+.btn:hover {
+  background-color: #2981df;
+}
+
+.btn:active {
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.special {
+  padding: 8px;
+  background-color: #456fa0; 
+  background-color: white;
+}
+
+span {
+  text-decoration: overline;
+}
+
+#buttonCalc {
+  display: block;
+  width: 400px;
+  margin: 20px auto;
+  text-transform: uppercase;
+}
+
+#resultArea {
+  display: none;
+  width: 85%;
+  margin: 30px auto;
+  text-align: center;
+  font: bold 12pt Verdana;
+}
+
+#result {
+  display: inline;
+  width: 75%;
+  margin-top: 10px;
+}
+
+#buttonCopy {
+  vertical-align: top;
+  height: 45px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Стилі для навігаційних кнопок */
+.nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #456fa0; 
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: fixed; /* Фіксоване позиціонування */
+}
+
+.nav-btn:hover {
+  background-color: #345a80; 
+}
+
+.nav-btn i {
+  pointer-events: none; /* Щоб іконка не заважала кліку */
+}
+
+.nav-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+
+#prevBtn.nav-btn {
+  top: 50%;
+  left: 10px; 
+  transform: translateY(-50%);
+}
+
+#nextBtn.nav-btn {
+  top: 50%;
+  right: 10px; 
+  transform: translateY(-50%);
+}
+
+#homeBtn.nav-btn {
+  top: 20px; 
+  right: 10px; 
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}

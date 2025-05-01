@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <title>Обчислення комбінаторних виразів</title>
+    <link rel="stylesheet" href="styles-dm-4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+       <!-- Кнопка "Назад" -->
+ <button class="circle-button nav-btn" title="Попереднє завдання" id="prevBtn">
+  <i class="fas fa-arrow-left"></i>
+</button> 
+
+<img src="condition-4.png" width="700" alt="Умова для завдання №4"> 
+
+    <input type="text" id="formula">
+
+    <div id="buttons">
+      <button class="btn normal" value="(" title="Ліва дужка">(</button>
+      <button class="btn normal" value=")" title="Права дужка">)</button>
+      <button class="btn normal" value="+" title="Додавання">+</button>
+      <button class="btn normal" value="-" title="Віднімання">-</button>
+      <button class="btn normal" value="*" title="Множення">*</button>
+      <button class="btn normal" value="/" title="Ділення">/</button>
+      <button class="btn special" id="buttonBackspace" title="Видалити"><img src="backspace.png" alt=""></button>
+      <button class="btn normal" value="C" title="">C(n,k)</button>
+      <button class="btn normal" value="C_" title=""><span>C</span>(n,k)</button>
+      <button class="btn normal" value="A" title="">A(n,k)</button>
+      <button class="btn normal" value="A_" title=""><span>A</span>(n,k)</button>
+      <button class="btn normal" value="P" title="">P(n)</button>
+      <button class="btn normal" value="P_" title=""><span>P</span>(...)</button>
+      <button class="btn special" id="buttonClear" title="Очистка"><img src="trash.png" alt=""></button>
+    </div>
+
+    <button class="btn" id="buttonCalc">Обчислити значення виразу</button>
+
+    <div id="resultArea">
+      ЗНАЧЕННЯ ВИРАЗУ:<br>
+      <input id="result" type="text" value="?" readonly title="Цифр у числі: 1">
+      <img src="copy.png" alt="" title="Копіювати в буфер обміну" id="buttonCopy">
+    </div>
+
+     <!-- Кнопка "На головну" -->
+  <button class="circle-button nav-btn" title="Головна сторінка" id="homeBtn">
+    <i class="fas fa-house"></i>
+</button>
+
+<!-- Кнопка "Вперед" -->
+<button class="circle-button nav-btn" title="Наступне завдання" id="nextBtn">
+    <i class="fas fa-arrow-right"></i>
+</button>
+
+    <script src="script-dm-4.js"></script>
+  </body>
+</html>

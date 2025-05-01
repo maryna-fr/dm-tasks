@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Бінарні відношення - 2</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+       <!-- Кнопка "Назад" -->
+ <button class="circle-button nav-btn" title="Попереднє завдання" id="prevBtn">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+
+<img src="condition-3.png" width="700" alt="Умова для завдання №3"> 
+
+<form id="form-3">
+    <select id="presetOptions">
+        <option value="">Виберіть варіант...</option>
+        <option value="1,2,3,4,5||4,5,6,7||y - x >= 3">Варіант 1</option>
+        <option value="5,2,1||7,8,9||x * 2 == y">Варіант 2</option>
+        <option value="6,7,8,9||1,2,9,10||x + y = 12">Варіант 3</option>
+    </select>
+    <br>
+    A = { <input type="text" id="setA" value="1,2,3" size="15"> }<br>
+    
+    <div id="for-R-3">
+        <input type="radio" name="mode" id="modeText" checked >
+        <label for="modeText"> 
+            R = { (x,y): x ∈ A, y ∈ A, 
+        </label>
+        <input type="text" id="R" class="r-size-2" value="y - x >= 3" size="15"> }
+        <br>
+    
+        <input type="radio" name="mode" id="modeMatrix">
+        <label for="modeMatrix">матричне задання відношення R</label>
+    </div>
+    
+    <p id="matrix"></p>
+    <br>
+    <input type="button" value="Обчислити" id="calcBtn">
+</form>
+
+ <!-- Кнопка "На головну" -->
+ <button class="circle-button nav-btn" title="Головна сторінка" id="homeBtn">
+    <i class="fas fa-house"></i>
+</button>
+
+<!-- Кнопка "Вперед" -->
+<button class="circle-button nav-btn" title="Наступне завдання" id="nextBtn">
+    <i class="fas fa-arrow-right"></i>
+</button>
+
+<p id="Res"></p>
+
+<script src="script-dm-3.js"></script>
+
+</body>
+</html>
