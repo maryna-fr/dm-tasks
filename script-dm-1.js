@@ -155,13 +155,20 @@ presetSelect.addEventListener('change', () => {
 });
 
 // Логіка навігації
-const pages = ['DM-1.html', 'DM-2.html', 'DM-3.html', 'DM-4.html'];
-const currentPage = window.location.pathname.split('/').pop();
-console.log('Current page:', currentPage);
+const pages = ['DM-1', 'DM-2', 'DM-3', 'DM-4'];
+  let currentPage = window.location.pathname.split('/').pop();
 
-const currentIndex = pages.indexOf(currentPage);
-console.log('Current index:', currentIndex);
+  if (!currentPage || currentPage === 'index.html') {
+    currentPage = 'DM-1';
+  }
 
+  currentPage = currentPage.toLowerCase().replace('.html', '');
+
+  console.log('Current page:', currentPage);
+
+  const currentIndex = pages.findIndex(page => page.toLowerCase() === currentPage);
+  console.log('Current index:', currentIndex);
+  
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const homeBtn = document.getElementById('homeBtn');
