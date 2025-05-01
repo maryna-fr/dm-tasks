@@ -318,14 +318,14 @@
          }
        
          // Логіка для кнопки "На головну"
-         if (currentPage === 'HomePage.html') {
-           console.log('Disabling home button because current page is HomePage.html');
+         if (currentPage === 'index.html') {
+           console.log('Disabling home button because current page is index.html');
            homeBtn.disabled = true;
          } else {
-           console.log('Adding click event to home button to redirect to HomePage.html');
+           console.log('Adding click event to home button to redirect to index.html');
            homeBtn.addEventListener('click', function() {
-             console.log('Redirecting to HomePage.html');
-             window.location.href = 'HomePage.html';
+             console.log('Redirecting to index.html');
+             window.location.href = 'index.html';
            });
          }
     document.getElementById("presetOptions").addEventListener("change", autofillSets);
