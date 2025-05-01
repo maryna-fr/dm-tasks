@@ -306,57 +306,60 @@ document.addEventListener('DOMContentLoaded', function() {
   }, false);
 
 
-   // Логіка навігації
-   const pages = ['DM-1.html', 'DM-2.html', 'DM-3.html', 'DM-4.html'];
-   const currentPage = window.location.pathname.split('/').pop();
-   console.log('Current page:', currentPage);
- 
-   const currentIndex = pages.indexOf(currentPage);
-   console.log('Current index:', currentIndex);
- 
-   const prevBtn = document.getElementById('prevBtn');
-   const nextBtn = document.getElementById('nextBtn');
-   const homeBtn = document.getElementById('homeBtn');
- 
-   // Перевірка наявності кнопок
-   if (!prevBtn || !nextBtn || !homeBtn) {
-     console.error('One or more navigation buttons are missing:', { prevBtn, nextBtn, homeBtn });
-     return;
-   }
- 
-   // Логіка для кнопки "Назад"
-   if (currentIndex <= 0) {
-     console.log('Disabling prev button because this is the first page');
-     prevBtn.disabled = true;
-   } else {
-     console.log('Adding click event to prev button');
-     prevBtn.addEventListener('click', function() {
-       window.location.href = pages[currentIndex - 1];
-     });
-   }
- 
-   // Логіка для кнопки "Вперед"
-   if (currentIndex >= pages.length - 1) {
-     console.log('Disabling next button because this is the last page');
-     nextBtn.disabled = true;
-   } else {
-     console.log('Adding click event to next button');
-     nextBtn.addEventListener('click', function() {
-       window.location.href = pages[currentIndex + 1];
-     });
-   }
- 
-   // Логіка для кнопки "На головну"
-   if (currentPage === 'index.html') {
-     console.log('Disabling home button because current page is index.html');
-     homeBtn.disabled = true;
-   } else {
-     console.log('Adding click event to home button to redirect to index.html');
-     homeBtn.addEventListener('click', function() {
-       console.log('Redirecting to index.html');
-       window.location.href = 'index.html';
-     });
-   }
+// Логіка навігації
+const pages = ['DM-1', 'DM-2', 'DM-3', 'DM-4']; // Видаляємо .html із назв сторінок
+let currentPage = window.location.pathname.split('/').pop();
 
+// Якщо сторінка порожня або це корінь, вважаємо її DM-1
+if (!currentPage || currentPage === 'index.html') {
+  currentPage = 'DM-1';
+}
 
+// Приводимо до нижнього регістру і видаляємо .html, якщо є
+currentPage = currentPage.toLowerCase().replace('.html', '');
+
+console.log('Current page:', currentPage);
+
+// Знаходимо індекс, приводячи сторінки до нижнього регістру для порівняння
+const currentIndex = pages.findIndex(page => page.toLowerCase() === currentPage);
+console.log('Current index:', currentIndex);
+
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const homeBtn = document.getElementById('homeBtn');
+
+if (!prevBtn || !nextBtn || !homeBtn) {
+  console.error('One or more navigation buttons are missing:', { prevBtn, nextBtn, homeBtn });
+  return;
+}
+
+if (currentIndex <= 0) {
+  console.log('Disabling prev button because this is the first page');
+  prevBtn.disabled = true;
+} else {
+  console.log('Adding click event to prev button');
+  prevBtn.addEventListener('click', function() {
+    window.location.href = '/' + pages[currentIndex - 1] + '.html';
+  });
+}
+
+if (currentIndex >= pages.length - 1) {
+  console.log('Disabling next button because this is the last page');
+  nextBtn.disabled = true;
+} else {
+  console.log('Adding click event to next button');
+  nextBtn.addEventListener('click', function() {
+    window.location.href = '/' + pages[currentIndex + 1] + '.html';
+  });
+}
+
+if (currentPage === 'dm-1' || currentPage === 'index.html') {
+  console.log('Disabling home button because current page is index.html or DM-1');
+  homeBtn.disabled = true;
+} else {
+  console.log('Adding click event to home button to redirect to index.html');
+  homeBtn.addEventListener('click', function() {
+    window.location.href = '/index.html';
+  });
+}
 });
